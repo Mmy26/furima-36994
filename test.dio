@@ -31,7 +31,7 @@
                 <mxCell id="12" value="addressesテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
                     <mxGeometry x="270" y="390" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="&lt;span&gt;Zip_code&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Region&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;City&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Street&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Building&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Phone_number&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Purchases_id&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
+                <mxCell id="13" value="&lt;span&gt;Zip_code&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Region_id&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;City&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Street&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Building&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Phone_number&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Purchases_id&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
                     <mxGeometry x="270" y="420" width="140" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;" edge="1" parent="1">
