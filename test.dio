@@ -4,8 +4,8 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="2" value="&lt;span&gt;Nickname&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Email&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Password&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;First_name&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Last_name&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Birth&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
-                    <mxGeometry x="40" y="150" width="120" height="170" as="geometry"/>
+                <mxCell id="2" value="&lt;span&gt;Nickname&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Email&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Encrypted_assword&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;First_name&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Last_name&lt;br&gt;&lt;/span&gt;&lt;br&gt;First_kana&lt;br&gt;&lt;br&gt;Last_kana&lt;br&gt;&lt;br&gt;Birth" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
+                    <mxGeometry x="39" y="150" width="120" height="250" as="geometry"/>
                 </mxCell>
                 <mxCell id="3" value="usersテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
                     <mxGeometry x="40" y="120" width="120" height="30" as="geometry"/>
@@ -13,7 +13,7 @@
                 <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2" target="2">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="&lt;span&gt;Image&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Title&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Explanation&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;Category&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;State&lt;br&gt;&lt;br&gt;&lt;/span&gt;Fee&lt;br&gt;&lt;br&gt;Region&lt;br&gt;&lt;br&gt;Shipped_days&lt;br&gt;&lt;br&gt;Price&lt;br&gt;&lt;span&gt;&lt;br&gt;user_id&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
+                <mxCell id="5" value="&lt;span&gt;Title&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Explanation&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;Category_id&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;State_id&lt;br&gt;&lt;br&gt;&lt;/span&gt;Fee_id&lt;br&gt;&lt;br&gt;Region_id&lt;br&gt;&lt;br&gt;Shipped_days_id&lt;br&gt;&lt;br&gt;Price&lt;br&gt;&lt;span&gt;&lt;br&gt;user_id&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
                     <mxGeometry x="271" y="30" width="120" height="280" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="itemsテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
@@ -22,7 +22,7 @@
                 <mxCell id="9" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="5" target="5">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="10" value="informationsテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
+                <mxCell id="10" value="Purchasesテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
                     <mxGeometry x="520" y="120" width="120" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="11" value="user_id&lt;br&gt;&lt;br&gt;item_id" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
