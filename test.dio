@@ -13,7 +13,7 @@
                 <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;curved=0;rounded=1;sketch=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="2" target="2">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="&lt;span&gt;Title&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Explanation&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;Category_id&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;State_id&lt;br&gt;&lt;br&gt;&lt;/span&gt;Fee_id&lt;br&gt;&lt;br&gt;Region_id&lt;br&gt;&lt;br&gt;Shipped_days_id&lt;br&gt;&lt;br&gt;Price&lt;br&gt;&lt;span&gt;&lt;br&gt;user_id&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
+                <mxCell id="5" value="&lt;span&gt;Title&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Explanation&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;Category_id&lt;/span&gt;&lt;br&gt;&lt;span&gt;&lt;br&gt;Status_id&lt;br&gt;&lt;br&gt;&lt;/span&gt;Fee_id&lt;br&gt;&lt;br&gt;Region_id&lt;br&gt;&lt;br&gt;Shipped_days_id&lt;br&gt;&lt;br&gt;Price&lt;br&gt;&lt;span&gt;&lt;br&gt;user_id&lt;br&gt;&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
                     <mxGeometry x="271" y="30" width="120" height="280" as="geometry"/>
                 </mxCell>
                 <mxCell id="8" value="itemsテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
@@ -31,7 +31,7 @@
                 <mxCell id="12" value="addressesテーブル" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;" vertex="1" parent="1">
                     <mxGeometry x="270" y="390" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="&lt;span&gt;Zip_code&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Prefecture&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;City&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Street&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Building&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Phone_number&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Items_id&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
+                <mxCell id="13" value="&lt;span&gt;Zip_code&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Region&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;City&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Street&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Building&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Phone_number&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Items_id&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=0;sketch=0;align=left;" vertex="1" parent="1">
                     <mxGeometry x="270" y="420" width="140" height="210" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;" edge="1" parent="1">

@@ -52,7 +52,7 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | zip_code           | string     | null: false                    |
-| prefecture         | string     | null: false                    |
+| region             | string     | null: false                    |
 | city               | string     | null: false                    |
 | street             | string     | null: false                    |
 | building           | string     |                                |
