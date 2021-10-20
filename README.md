@@ -23,18 +23,16 @@
 | title              | string     | null: false                    |
 | explanation        | text       | null: false                    |
 | category_id        | integer    | null: false                    |
-| state_id           | integer    | null: false                    |
+| status_id           | integer    | null: false                    |
 | fee_id             | integer    | null: false                    |
 | region_id          | integer    | null: false                    |
-| shipped_days_id    | integer    | null: false                    |
+| shipped_day_id     | integer    | null: false                    |
 | price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :users
-- has_one    :information
-- has_one    :addresses
-
+- belongs_to :user
+- has_one    :Purchase
 
 ## Purchases テーブル
 
@@ -44,8 +42,8 @@
 | item               | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :items
-- has_one    :addresses
+- belongs_to :item
+- has_one    :address
 
 ## addresses テーブル
 
@@ -57,8 +55,7 @@
 | street             | string     | null: false                    |
 | building           | string     |                                |
 | phone_number       | string     | null: false                    |
-| Purchases          | references | null: false, foreign_key: true |
+| Purchase           | references | null: false, foreign_key: true |
 
 ### Association
-- belongs_to :items
-- belongs_to :information
+- belongs_to :Purchase
