@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item, only: [:show, :update, :edit]
+  before_action :authenticate_user!, except: [:index, :show, :contributor_confirmation]
   before_action :contributor_confirmation, only: :edit
 
   def index
@@ -20,23 +21,23 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
-    @item = Item.find(params[:id])
     if @item.update(item_params)
-      redirect_to root_path
+      redirect_to item_path
     else
-      render :new
+      render :edit
     end
   end
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
 
   def item_params
     params.require(:item).permit(:image, :title, :explanation, :category_id, :status_id, :fee_id, :region_id, :shipped_day_id,
@@ -44,7 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def contributor_confirmation
-    @item = Item.find(params[:id])
     redirect_to root_path unless current_user == @item.user
   end
 end
