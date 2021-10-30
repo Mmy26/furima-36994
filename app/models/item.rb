@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
   belongs_to :user
+  has_one    :purchase
   has_one_attached :image
 
   VALID_PRICEL_REGEX = /\A[0-9]+\z/
