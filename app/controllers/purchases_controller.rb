@@ -1,15 +1,13 @@
 class PurchasesController < ApplicationController
+  before_action :set_item,                 only: [:index, :create, :contributor_confirmation]
   before_action :authenticate_user!,       only: :index
   before_action :contributor_confirmation, only: :index
-  before_action :stock_confirmation,       only: :index
   
   def index
     @purchase_address = PurchaseAddress.new
-    @item = Item.find(params[:item_id])
   end
 
   def create
-    @item = Item.find(params[:item_id])
     @purchase_address = PurchaseAddress.new(purchase_params)
     if @purchase_address.valid?
       pay_item
@@ -21,6 +19,10 @@ class PurchasesController < ApplicationController
   end
 
   private
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 
   def purchase_params
     params.require(:purchase_address).permit(:zip_code, :region_id, :city, :street, :building,
@@ -37,15 +39,7 @@ class PurchasesController < ApplicationController
   end
 
   def contributor_confirmation
-    @item = Item.find(params[:item_id])
-    if current_user == @item.user
-      redirect_to root_path
-    end
-  end
-  
-  def stock_confirmation
-    @item = Item.find(params[:item_id])
-    if @item.purchase.present?
+    if current_user == @item.user || @item.purchase.present?
       redirect_to root_path
     end
   end
