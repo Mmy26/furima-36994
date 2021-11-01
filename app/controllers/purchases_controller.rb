@@ -42,6 +42,7 @@ class PurchasesController < ApplicationController
       redirect_to root_path
     end
   end
+  
   def stock_confirmation
     @item = Item.find(params[:item_id])
     if @item.purchase.present?
