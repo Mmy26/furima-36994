@@ -25,12 +25,12 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Zip code can't be blank")
       end
-      it '都道府県が空では購入できない' do
+      it '都道府県が未選択では購入できない' do
         @purchase_address.region_id = 1
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Region can't be blank")
       end
-      it '都道府県が未選択では購入できない' do
+      it '都道府県が空では購入できない' do
         @purchase_address.region_id = nil
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Region can't be blank")
