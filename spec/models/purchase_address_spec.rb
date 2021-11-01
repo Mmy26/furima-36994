@@ -2,7 +2,10 @@ require 'rails_helper'
 
 RSpec.describe PurchaseAddress, type: :model do
   before do
-    @purchase_address = FactoryBot.build(:purchase_address)
+    @user = FactoryBot.create(:user)
+    @item = FactoryBot.create(:item)
+    @purchase_address = FactoryBot.build(:purchase_address, user_id: @user.id , item_id: @item.id)
+    sleep 0.1
   end
 
   describe '配送先情報' do
@@ -27,6 +30,11 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Region can't be blank")
       end
+      it '都道府県が未選択では購入できない' do
+        @purchase_address.region_id = nil
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include("Region can't be blank")
+      end
       it '市区町村が空では購入できない' do
         @purchase_address.city = ''
         @purchase_address.valid?
@@ -37,10 +45,15 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Street can't be blank")
       end
-      it '電話番号が空では購入できない' do
-        @purchase_address.phone_number = ''
+      it '郵便番号が半角ハイフンを含む形でなければ購入できない' do
+        @purchase_address.zip_code = '1111111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number can't be blank")
+        expect(@purchase_address.errors.full_messages).to include("Zip code is invalid. Enter it as follows (e.g. 123-4567)")
+      end
+      it '郵便番号が前3桁-後4桁でなければ購入できない' do
+        @purchase_address.zip_code = '1111-111'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include('Zip code is invalid. Enter it as follows (e.g. 123-4567)')
       end
       it '郵便番号が前3桁-後4桁でなければ購入できない' do
         @purchase_address.zip_code = '1111-111'
@@ -57,6 +70,11 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include('Phone number is too short')
       end
+      it '電話番号が12桁以上では購入できない' do
+        @purchase_address.phone_number = '111111111111'
+        @purchase_address.valid?
+        expect(@purchase_address.errors.full_messages).to include('Phone number is too short')
+      end
       it '電話番号が半角数字でなければ購入できない' do
         @purchase_address.phone_number = 'aaaaaaaaaa'
         @purchase_address.valid?
@@ -67,7 +85,7 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("Token can't be blank")
       end
-      it 'use_idが空では購入できない' do
+      it 'user_idが空では購入できない' do
         @purchase_address.user_id = nil
         @purchase_address.valid?
         expect(@purchase_address.errors.full_messages).to include("User can't be blank")
