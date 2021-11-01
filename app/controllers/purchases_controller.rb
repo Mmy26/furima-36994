@@ -2,7 +2,7 @@ class PurchasesController < ApplicationController
   before_action :set_item,                 only: [:index, :create, :contributor_confirmation]
   before_action :authenticate_user!,       only: :index
   before_action :contributor_confirmation, only: :index
-  
+
   def index
     @purchase_address = PurchaseAddress.new
   end
@@ -30,7 +30,7 @@ class PurchasesController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
     Payjp::Charge.create(
       amount: @item.price,
       card: purchase_params[:token],
@@ -39,8 +39,6 @@ class PurchasesController < ApplicationController
   end
 
   def contributor_confirmation
-    if current_user == @item.user || @item.purchase.present?
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user == @item.user || @item.purchase.present?
   end
 end

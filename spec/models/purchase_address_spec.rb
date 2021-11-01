@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe PurchaseAddress, type: :model do
-
   before do
     @purchase_address = FactoryBot.build(:purchase_address)
   end
@@ -16,7 +15,7 @@ RSpec.describe PurchaseAddress, type: :model do
         @purchase_address.valid?
         expect(@purchase_address).to be_valid
       end
-     end
+    end
     context '内容に問題がある場合' do
       it '郵便番号が空では購入できない' do
         @purchase_address.zip_code = ''
@@ -46,22 +45,22 @@ RSpec.describe PurchaseAddress, type: :model do
       it '郵便番号が前3桁-後4桁でなければ購入できない' do
         @purchase_address.zip_code = '1111-111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Zip code is invalid. Enter it as follows (e.g. 123-4567)")
+        expect(@purchase_address.errors.full_messages).to include('Zip code is invalid. Enter it as follows (e.g. 123-4567)')
       end
       it '郵便番号が半角数字でなければ購入できない' do
         @purchase_address.zip_code = 'aaa-aaaa'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Zip code is invalid. Enter it as follows (e.g. 123-4567)")
+        expect(@purchase_address.errors.full_messages).to include('Zip code is invalid. Enter it as follows (e.g. 123-4567)')
       end
       it '電話番号が９桁以下では購入できない' do
         @purchase_address.phone_number = '111111111'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number is too short")
+        expect(@purchase_address.errors.full_messages).to include('Phone number is too short')
       end
       it '電話番号が半角数字でなければ購入できない' do
         @purchase_address.phone_number = 'aaaaaaaaaa'
         @purchase_address.valid?
-        expect(@purchase_address.errors.full_messages).to include("Phone number is invalid. Input only number")
+        expect(@purchase_address.errors.full_messages).to include('Phone number is invalid. Input only number')
       end
       it 'カード情報がなければなければ購入できない' do
         @purchase_address.token = ''

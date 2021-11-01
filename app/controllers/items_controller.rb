@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
-  before_action :set_item,                  only: [:show, :update, :edit, :destroy, :contributor_confirmation, :stock_confirmation]
-  before_action :authenticate_user!,      except: [:index, :show]
+  before_action :set_item,
+                only: [:show, :update, :edit, :destroy, :contributor_confirmation, :stock_confirmation]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :contributor_confirmation,  only: [:edit, :update, :destroy]
   before_action :stock_confirmation,        only: :edit
 
@@ -41,6 +42,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def set_item
     @item = Item.find(params[:id])
   end
@@ -53,10 +55,8 @@ class ItemsController < ApplicationController
   def contributor_confirmation
     redirect_to root_path unless current_user == @item.user
   end
-  
+
   def stock_confirmation
-    if @item.purchase.present?
-      redirect_to root_path
-    end
+    redirect_to root_path if @item.purchase.present?
   end
 end
