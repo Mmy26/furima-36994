@@ -1,6 +1,7 @@
 class PurchasesController < ApplicationController
   before_action :authenticate_user!,       only: :index
   before_action :contributor_confirmation, only: :index
+  before_action :stock_confirmation,       only: :index
   
   def index
     @purchase_address = PurchaseAddress.new
@@ -39,6 +40,12 @@ class PurchasesController < ApplicationController
     @item = Item.find(params[:item_id])
     if current_user == @item.user
       redirect_to root_path
-    end 
+    end
+  end
+  def stock_confirmation
+    @item = Item.find(params[:item_id])
+    if @item.purchase.present?
+      redirect_to root_path
+    end
   end
 end
